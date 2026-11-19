@@ -7,8 +7,8 @@ def fib():
         values = int(valsInput)
     except ValueError:
         print("You must input a number.")
-        fib()
-
+        return
+    
     fibVals = []
     x, y = 0, 1
     for i in range(values):
@@ -19,7 +19,19 @@ def fib():
     return
 
 def checkPrime():
-    pass
+    primeInput = input("Enter a number: ")
+    try:
+        value = int(primeInput)
+    except ValueError:
+        print("You must input a number.")
+        return
+    for i in range(2, value):
+        if value % i == 0:
+            print(f"{value} is not a prime number.")
+        else:
+            print(f"{value} is a prime number!")
+            #THIS IS BROKEN AS HELL!!!!
+        
 
 def rangePrime():
     pass
@@ -55,12 +67,12 @@ while True:
         case 1: # fibonacci
             fib()
         case 2: # check prime
-            pass
+            checkPrime()
         case 3: # primenum range
-            pass
+            rangePrime()
         case 4: # multitable
-            pass
+            genMulti()
         case 5: # factorial
-            pass
+            factorial()
         case 6: # collatz
-            pass
+            collatz()
